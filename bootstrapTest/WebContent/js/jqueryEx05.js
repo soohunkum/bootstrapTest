@@ -2,10 +2,7 @@
 $(function() {
 
 	var num = 0;
-
 	var $move = $(".photoList > ul > li");
-
-	
 
 	$move.eq(num).find("a").addClass("on");
 
@@ -88,12 +85,9 @@ $(function() {
 		if (e.originalEvent.wheelDelta == 120 || e.originalEvent.detail == -3) {
 
 			listUp();
-
 		} else if (e.originalEvent.wheelDelta == -120 || e.originalEvent.detail == 3) {
 
 			listDown();
-
 		}
-
 	});
 });
