@@ -18,19 +18,23 @@ $(function(){
 			}
 			var addImg = (clickCnt-1)==0?"":(":gt("+(images.length*(clickCnt-1)-1))+")";
 				$(".picture>div" + addImg).each(function(){
-					$(this).imagesLoaded()
+					var thisImg = $(this);//추가
+					thisImg.imagesLoaded()//수정
 					.always(function(){
 						console.log("always");
 						
 					})
 					.done(function(){
 						console.log("done");
+						thisImg.find(".loader").hide();
 					})
 					.fail(function(){
 						console.log("fail");
+						thisImg.hide();
 					}) 
 					.progress(function(){
 						console.log("progress");
+						thisImg.prepend("<div class='loader'>Loading...</div>");
 					});
 				});
 			});
