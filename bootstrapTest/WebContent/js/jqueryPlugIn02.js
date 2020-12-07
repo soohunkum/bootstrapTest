@@ -5,6 +5,7 @@ $(function(){
 			"images/picture4.jpg",
 			"images/picture5.jpg"
 			];
+	
 		var clickCnt=0;
 		
 		$("#imgDel").click(function(){
@@ -31,7 +32,7 @@ $(function(){
 					.fail(function(){
 						console.log("fail");
 						thisImg.hide();
-					}) 
+					})
 					.progress(function(){
 						console.log("progress");
 						thisImg.prepend("<div class='loader'>Loading...</div>");
